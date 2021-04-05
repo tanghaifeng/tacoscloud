@@ -19,5 +19,6 @@ public class SimpleLambda {
 
         Thread thread2 = new Thread(()->System.out.println("333"));
         thread2.start();
+
     }
 }
