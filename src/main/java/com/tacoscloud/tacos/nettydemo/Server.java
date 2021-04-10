@@ -25,12 +25,7 @@ public class Server {
             ServerBootstrap b = new ServerBootstrap(); // (2)
             b.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class) // (3)
-                    .childHandler(new ChannelInitializer<SocketChannel>() { // (4)
-                        @Override
-                        public void initChannel(SocketChannel ch) throws Exception {
-                            ch.pipeline().addLast(new Decoder()).addLast(new ServerHandler()).addLast("logging", new LoggingHandler(LogLevel.INFO));
-                        }
-                    })
+                    .childHandler(new ServerChannelInitializer())
                     .option(ChannelOption.SO_BACKLOG, 128)          // (5)
                     .childOption(ChannelOption.SO_KEEPALIVE, true); // (6)
 
