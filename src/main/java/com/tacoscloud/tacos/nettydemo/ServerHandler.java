@@ -16,8 +16,11 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+
         System.out.println("解完码..............");
-        super.channelRead(ctx, msg);
+        //ctx.channel().writeAndFlush("1");
+       ctx.writeAndFlush("1");
+      //  super.channelRead(ctx, msg);
     }
 
     @Override
