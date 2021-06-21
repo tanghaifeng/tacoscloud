@@ -11,4 +11,8 @@ public class IntegerDemo {
         Integer s3 = 128;
         System.out.println(s2 == s3);
     }
+
+    public static void run() {
+        System.out.println("11111111");
+    }
 }
